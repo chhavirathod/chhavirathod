@@ -25,8 +25,7 @@ I'm a web developer and full-stack explorer. Currently building projects, fighti
 
 ## 🛠 Tech Toolbox
 
-React ⚛️ | Node.js 🟢 | Express 🚂 | MongoDB 🍃 | JavaScript 💛 | Python 🐍
-C++ 💥 | HTML/CSS 🎨 | Tailwind 🌬 | Git 🔧 | Postman 🧪 | Google Colab ☁️
+React ⚛️ | Node.js 🟢 | Express 🚂 | MongoDB 🍃 | JavaScript 💛 | Python 🐍 | C++ 💥 | HTML/CSS 🎨 | Tailwind 🌬 | Git 🔧 | Postman 🧪 | Google Colab ☁️
 
 ---
 
