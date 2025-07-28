@@ -26,24 +26,25 @@ import BackgroundGradientAnimation from "@/components/ui/background-gradient-ani
 import { CardContainer, CardBody, CardItem } from "@/components/ui/3d-card";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
+import sparkle from "./assets/sparkle.png"
 
 function App() {
   return (
-    <div>
+    <div className="bg-black">
       <BackgroundGradientAnimation>
-        <nav className="p-4">
+        <nav className="m-4" id="home">
           <ul className="flex border-2 rounded-3xl  lg:mx-4 justify-around text-zinc-200 ">
-            <li className="p-3 ">chhavirathod</li>
+            <li className="p-3 hover:font-semibold"><a href="#home">chhavirathod</a></li>
             <li>
               <ul className="flex justify-center">
-                <li className="p-3">Home</li>
-                <li className="p-3">About</li>
-                <li className="p-3">Projects</li>
-                <li className="p-3">Contact</li>
+                <li className="p-3 hover:font-semibold"><a href="#home">Home</a></li>
+                <li className="p-3 hover:font-semibold"><a href="#about">About</a></li>
+                <li className="p-3 hover:font-semibold"><a href="#projects">Projects</a></li>
+                <li className="p-3 hover:font-semibold"><a href="#contact">Contact</a></li>
               </ul>
             </li>
             <li className="p-2 rounded-xl">
-              <button className="bg-transparent hover:bg-zinc-200 rounded-lg p-2">
+              <button className="bg-transparent hover:bg-zinc-500 rounded-lg p-2">
                 <LuSun />
               </button>
             </li>
@@ -72,15 +73,17 @@ function App() {
           </p>
         </main>
       </BackgroundGradientAnimation>
-      <section className="p-6 pt-12 bg-black text-white relative">
+      <section className="p-6 pt-12 bg-black text-white relative border-black rounded-3xl"  id="about">
         <div className="flex justify-center text-4xl">
           <b>About Me</b>
         </div>
-        <div className="grid grid-cols-2 mt-9 pt-2">
+        <div className="mt-9 pt-2">
           <div className="flex justify-center pt-6">
-            <img className="h-[80%] rounded-full" src={chhavipic} alt="" />
+            <img className="h-30 pr-15" src={sparkle} alt="" />
+            <img className="h-90 rounded-xl hover:border-white" src={chhavipic} alt="" />
+            <img className="h-75 pt-47 pl-15" src={sparkle} alt="" />
           </div>
-          <div className="text-2xl pt-8">
+          <div className="text-2xl p-10">
             <p>
               I’m a Computer Science undergraduate from Mumbai, who loves to
               develop and create websites that make an impact through creativity
@@ -100,7 +103,7 @@ function App() {
           </div>
         </div>
       </section>
-      <section className=" min-h-screen p-6 bg-black text-white">
+      <section className=" min-h-screen p-6 bg-black text-white" id="projects">
         <div className="flex justify-center text-4xl mb-12">
           <b>My Projects</b>
         </div>
@@ -110,13 +113,13 @@ function App() {
               <CardItem
                 translateZ={50}
                 className="bg-black p-6 rounded-xl shadow-lg"
-              >
+              > <a href="https://modidreamdholerasir.com/" target="_blank">
                 <h2 className="text-xl font-bold mb-2">Dholera SIR</h2>
                 <p className="text-gray-600">
                   Land Plot Selling Business Website.
                 </p>
                 <br />
-                <img src={dholera} alt="" />
+                <img src={dholera} alt="" /></a>
               </CardItem>
             </CardBody>
           </CardContainer>
@@ -125,13 +128,13 @@ function App() {
               <CardItem
                 translateZ={50}
                 className="bg-black p-6 rounded-xl shadow-lg"
-              >
+              ><a href="https://innovathon-beaches.vercel.app/" target="_blank">
                 <h2 className="text-xl font-bold mb-2">InnoGuard</h2>
                 <p className="text-gray-600">
                   Financial Fraud detector for small businesses.
                 </p>
                 <br />
-                <img src={finfraud} alt="" />
+                <img src={finfraud} alt="" /></a>
               </CardItem>
             </CardBody>
           </CardContainer>
@@ -140,13 +143,13 @@ function App() {
               <CardItem
                 translateZ={50}
                 className="bg-black p-6 rounded-xl shadow-lg"
-              >
+              ><a href="https://github.com/chhavirathod/RUBIX25_TEAM_14_BEACHES" target="_blank">
                 <h2 className="text-xl font-bold mb-2">ArtiFACTS</h2>
                 <p className="text-gray-600">
                   Cultural Artifact Recognition Site.
                 </p>
                 <br />
-                <img src={artifacts} alt="" />
+                <img src={artifacts} alt="" /></a>
               </CardItem>
             </CardBody>
           </CardContainer>
@@ -241,7 +244,7 @@ function App() {
           </div>
         </div>
       </section>
-      <footer className="pt-6 bg-black text-white">
+      <footer className="pt-6 bg-black text-white"  id="contact">
         <div className="flex justify-center ">
           <b className="text-4xl mb-12">Get in touch</b>
         </div>
