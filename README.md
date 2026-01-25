@@ -4,6 +4,7 @@ Welcome to the part of the internet where I pretend to be more organized than I 
 
 I'm a web developer and full-stack explorer. Currently building projects, fighting semicolons, and occasionally yelling at my code (lovingly).
 
+
 ## 🚀 My GitHub in Action
 
 ![GitHub Space Shooter](game.gif)
