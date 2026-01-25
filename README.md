@@ -6,6 +6,8 @@ I'm a web developer and full-stack explorer. Currently building projects, fighti
 
 ---
 
+![My GitHub Game](game.gif)
+
 ## 💼 What I Actually Do
 
 - 💻 Build websites that (mostly) work  
