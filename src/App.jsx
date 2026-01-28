@@ -26,6 +26,8 @@ import { Mail, Phone, MapPin } from "lucide-react";
 import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
 import "./styles/willem.css";
 import WillemHeader from "./components/WillemHeader";
+import catHead from "./assets/cathead.png";
+import catTail from "./assets/cattail2.png";
 
 function App() {
   return (
@@ -33,45 +35,111 @@ function App() {
       <WillemHeader />
       <div className="bg-black">
         <BackgroundGradientAnimation>
-          <nav className="m-4 flex justify-center" id="home">
-            <ul className="inline-flex border-2 rounded-full backdrop-blur-2xl text-zinc-200 px-6">
-              <li className="p-4 hover:font-semibold">
+          <nav className="m-10 flex justify-center" id="home">
+            <ul className="inline-flex border-2 rounded-full backdrop-blur-2xl text-zinc-200 px-6 relative overflow-visible">
+              <li className="p-4 hover:font-semibold relative group">
+                {/* CAT HEAD */}
+                <img
+                  src={catHead}
+                  alt="cat head"
+                  className="
+          absolute
+          -top-7
+          left-1/2
+          -translate-x-1/2
+          translate-y-4
+          opacity-0
+          w-10 h-7
+          transition-all duration-300 ease-out
+          group-hover:translate-y-0
+          group-hover:opacity-100
+          pointer-events-none
+        "
+                />
+
                 <a href="#home">Home</a>
+
+                {/* CAT TAIL */}
+                <img
+                  src={catTail}
+                  alt="cat tail"
+                  className="
+          absolute
+          -bottom-7
+          left-1/2
+          -translate-x-[25%]
+          -translate-y-4
+          opacity-0
+          w-7 h-7
+          transition-all duration-300 ease-out
+          group-hover:translate-y-0
+          group-hover:opacity-100
+          pointer-events-none
+        "
+                />
               </li>
-              <li className="p-4 hover:font-semibold">
+
+              <li className="p-4 hover:font-semibold relative group">
+                <img
+                  src={catHead}
+                  className="absolute -top-7 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 w-10 h-7 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 pointer-events-none"
+                />
                 <a href="#projects">Projects</a>
+                <img
+                  src={catTail}
+                  className="absolute -bottom-7 left-1/2 -translate-x-[25%] -translate-y-4 opacity-0 w-7 h-7 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 pointer-events-none"
+                />
               </li>
-              <li className="p-4 hover:font-semibold">
+
+              <li className="p-4 hover:font-semibold relative group">
+                <img
+                  src={catHead}
+                  className="absolute -top-7 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 w-10 h-7 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 pointer-events-none"
+                />
                 <a href="#about">About</a>
+                <img
+                  src={catTail}
+                  className="absolute -bottom-7 left-1/2 -translate-x-[25%] -translate-y-4 opacity-0 w-7 h-7 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 pointer-events-none"
+                />
               </li>
-              <li className="p-4 hover:font-semibold">
+
+              <li className="p-4 hover:font-semibold relative group">
+                <img
+                  src={catHead}
+                  className="absolute -top-7 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 w-10 h-7 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 pointer-events-none"
+                />
                 <a href="#contact">Contact</a>
+                <img
+                  src={catTail}
+                  className="absolute -bottom-7 left-1/2 -translate-x-[25%] -translate-y-4 opacity-0 w-7 h-7 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 pointer-events-none"
+                />
               </li>
             </ul>
           </nav>
-            <main className="m-12 w-90vw min-h-screen pt-10 text-zinc-200 font-sans">
-              <ReactTyped
-                className="text-xl"
-                strings={[
-                  "Hey there! My name is,",
-                  "const myName = () =>",
-                  "System.out.println(myName),",
-                ]}
-                typeSpeed={50}
-                backSpeed={50}
-                loop
-              />
-              <h1 className="text-6xl py-5 leading-tight font-bold tracking-tight">
-                CHHAVI RATHOD
-              </h1>
-              <p className="text-3xl font-medium">
-                Building Websites that make an impact
-              </p>
-              <p className="py-6 text-2xl font-light">
-                A full stack web developer, building fast, scalable websites
-                that help businesses grow online.
-              </p>
-            </main>
+
+          <main className="m-12 w-90vw min-h-screen pt-10 text-zinc-200 font-sans">
+            <ReactTyped
+              className="text-xl"
+              strings={[
+                "Hey there! My name is,",
+                "const myName = () =>",
+                "System.out.println(myName),",
+              ]}
+              typeSpeed={50}
+              backSpeed={50}
+              loop
+            />
+            <h1 className="text-6xl py-5 leading-tight font-bold tracking-tight">
+              CHHAVI RATHOD
+            </h1>
+            <p className="text-3xl font-medium">
+              Building Websites that make an impact
+            </p>
+            <p className="py-6 text-2xl font-light">
+              A full stack web developer, building fast, scalable websites that
+              help businesses grow online.
+            </p>
+          </main>
         </BackgroundGradientAnimation>
 
         <section
@@ -152,11 +220,11 @@ function App() {
           </div>
           <div className="mt-9 pt-2">
             <div className="flex justify-center pt-6">
-                <img
-                  className="h-90 rounded-xl hover:border-white"
-                  src={chhavipic}
-                  alt=""
-                />
+              <img
+                className="h-90 rounded-xl hover:border-white"
+                src={chhavipic}
+                alt=""
+              />
             </div>
             <div className="text-2xl p-10">
               <p>
