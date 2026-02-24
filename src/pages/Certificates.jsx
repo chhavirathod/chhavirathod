@@ -6,7 +6,6 @@ import cloud_architecting from "../assets/AWS_Academy_Graduate___Cloud_Architect
 import full_stack_web_dev from "../assets/Full_stack_web_dev-udemy.jpg";
 import ccna from "../assets/CCNA_Introduction_to_Networks.jpg";
 import aws_cloud_virtual_internship from "../assets/AWS_Cloud_Virtual_internship.jpg";
-import { div } from "motion/react-client";
 
 const certificates = [
   {
@@ -95,34 +94,41 @@ const Certificates = () => {
   }, []);
 
   return (
-    <div>
-        <h3 style={{ color: "white" }} className="flex justify-center text-4xl mb-12"><b>Certificates</b></h3>
-    <div id="certificates" ref={containerRef} style={styles.wrapper}>
-      <ul style={styles.list}>
-        {certificates.map((cert, index) => (
-          <li key={index} className="certificate-item" style={styles.item}>
-            <img
-              src={cert.image}
-              alt={cert.title}
-              className="swipeimage"
-              style={styles.image}
-            />
-            <div>
-              <h3>{cert.title}</h3>
-            </div>
-          </li>
-        ))}
-      </ul>
-    </div>
-    </div>
+    <section
+      id="certificates"
+      ref={containerRef}
+      className="min-h-screen px-4 sm:px-6 lg:px-8 py-16 bg-[#132440] text-[#FDB5CE]"
+    >
+      <div className="max-w-5xl mx-auto">
+        <div className="flex justify-center mb-10">
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
+            Certificates
+          </h2>
+        </div>
+
+        <ul style={styles.list}>
+          {certificates.map((cert, index) => (
+            <li key={index} className="certificate-item" style={styles.item}>
+              <img
+                src={cert.image}
+                alt={cert.title}
+                className="swipeimage"
+                style={styles.image}
+              />
+              <div>
+                <h3 className="text-lg sm:text-xl">{cert.title}</h3>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
   );
 };
 
 const styles = {
   wrapper: {
-    minHeight: "100vh",
-    display: "flex",
-    alignItems: "center",
+    width: "100%",
   },
   list: {
     width: "100%",
@@ -132,7 +138,7 @@ const styles = {
   },
   item: {
     listStyle: "none",
-    borderBottom: "1px solid #ddd",
+    borderBottom: "1px solid #3B9797",
     padding: "2rem",
     cursor: "pointer",
   },

@@ -6,17 +6,25 @@ import { CardContainer, CardBody, CardItem } from "@/components/ui/3d-card";
 
 export default function Projects() {
   return (
-    <section className="pt-12 min-h-screen p-6 bg-black text-white" id="projects">
-      <div className="flex justify-center text-4xl mb-12">
+    <section
+      className="pt-16 pb-20 px-4 sm:px-6 lg:px-8 min-h-screen bg-[#132440] text-[#FDB5CE]"
+      id="projects"
+    >
+      <div className="flex justify-center text-3xl sm:text-4xl mb-10">
         <b>My Projects</b>
       </div>
-      <div className=" flex items-center justify-center ">
+      <div className="flex flex-col gap-8 items-stretch md:flex-row md:flex-wrap md:justify-center">
         <CardContainer>
           <CardBody>
-            <CardItem translateZ={50} className="bg-black p-6 rounded-xl shadow-lg">
+            <CardItem
+              translateZ={50}
+              className="bg-[#16476A] border border-[#3B9797] p-6 rounded-xl shadow-lg shadow-black/40"
+            >
               <a href="https://modidreamdholerasir.com/" target="_blank" rel="noreferrer">
                 <h2 className="text-xl font-bold mb-2">Dholera SIR</h2>
-                <p className="text-gray-600">Land Plot Selling Business Website.</p>
+                <p className="text-sm sm:text-base text-[#FDB5CE]/80">
+                  Land Plot Selling Business Website.
+                </p>
                 <br />
                 <img src={dholera} alt="Dholera" />
               </a>
@@ -26,10 +34,15 @@ export default function Projects() {
 
         <CardContainer>
           <CardBody>
-            <CardItem translateZ={50} className="bg-black p-6 rounded-xl shadow-lg">
+            <CardItem
+              translateZ={50}
+              className="bg-[#16476A] border border-[#3B9797] p-6 rounded-xl shadow-lg shadow-black/40"
+            >
               <a href="https://innovathon-beaches.vercel.app/" target="_blank" rel="noreferrer">
                 <h2 className="text-xl font-bold mb-2">InnoGuard</h2>
-                <p className="text-gray-600">Financial Fraud detector for small businesses.</p>
+                <p className="text-sm sm:text-base text-[#FDB5CE]/80">
+                  Financial Fraud detector for small businesses.
+                </p>
                 <br />
                 <img src={finfraud} alt="InnoGuard" />
               </a>
@@ -39,10 +52,15 @@ export default function Projects() {
 
         <CardContainer>
           <CardBody>
-            <CardItem translateZ={50} className="bg-black p-6 rounded-xl shadow-lg">
+            <CardItem
+              translateZ={50}
+              className="bg-[#16476A] border border-[#3B9797] p-6 rounded-xl shadow-lg shadow-black/40"
+            >
               <a href="https://github.com/chhavirathod/RUBIX25_TEAM_14_BEACHES" target="_blank" rel="noreferrer">
                 <h2 className="text-xl font-bold mb-2">ArtiFACTS</h2>
-                <p className="text-gray-600">Cultural Artifact Recognition Site.</p>
+                <p className="text-sm sm:text-base text-[#FDB5CE]/80">
+                  Cultural Artifact Recognition Site.
+                </p>
                 <br />
                 <img src={artifacts} alt="ArtiFACTS" />
               </a>
