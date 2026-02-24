@@ -4,7 +4,7 @@ import { FaLinkedin, FaGithub, FaInstagram, FaPhone } from "react-icons/fa";
 export default function Contact() {
   return (
     <section
-      className="pt-16 pb-10 px-4 sm:px-6 lg:px-8 bg-[#132440] text-white/80"
+      className="panel pt-16 pb-10 px-4 sm:px-6 lg:px-8 bg-[#132440] text-white/80"
       id="contact"
     >
       <div className="max-w-3xl mx-auto">

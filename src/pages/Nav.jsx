@@ -145,18 +145,6 @@ function MobileMenu({ open, setOpen }) {
               }}
             >
               <span>{link.label}</span>
-              <span className="relative w-6 h-6">
-                <img
-                  src={catHead}
-                  alt=""
-                  className="absolute -top-3 left-1/2 -translate-x-1/2 w-5 h-4 opacity-90"
-                />
-                <img
-                  src={catTail}
-                  alt=""
-                  className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-4 h-4 opacity-90"
-                />
-              </span>
             </a>
           </li>
         ))}

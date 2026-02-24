@@ -15,7 +15,7 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="min-h-screen px-4 sm:px-6 lg:px-8 py-16 bg-[#132440] text-[#FDB5CE]"
+      className="panel min-h-screen px-4 sm:px-6 lg:px-8 py-16 bg-[#132440] text-[#FDB5CE]"
     >
       <div className="max-w-6xl mx-auto">
         <div className="flex justify-center mb-10">

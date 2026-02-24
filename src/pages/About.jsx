@@ -4,7 +4,7 @@ import chhavipic from "../assets/chhaviphoto.jpg";
 export default function About() {
   return (
     <section
-      className="min-h-screen px-4 sm:px-6 lg:px-8 py-16 text-[#FDB5CE] bg-[#132440] relative rounded-3xl"
+      className="panel min-h-screen px-4 sm:px-6 lg:px-8 py-16 text-[#FDB5CE] bg-[#132440] relative rounded-3xl"
       id="about"
     >
       <div className="max-w-4xl mx-auto">

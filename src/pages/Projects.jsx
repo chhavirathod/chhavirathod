@@ -2,12 +2,14 @@ import React from "react";
 import dholera from "../assets/dholeraProj.png";
 import finfraud from "../assets/finFraud.png";
 import artifacts from "../assets/artifacts.png";
+import ecomm from "../assets/ecommProj.png";
+import job from "../assets/jobTrackerProj.png";
 import { CardContainer, CardBody, CardItem } from "@/components/ui/3d-card";
 
 export default function Projects() {
   return (
     <section
-      className="pt-16 pb-20 px-4 sm:px-6 lg:px-8 min-h-screen bg-[#132440] text-[#FDB5CE]"
+      className="panel pt-16 pb-20 px-4 sm:px-6 lg:px-8 min-h-screen bg-[#132440] text-[#FDB5CE]"
       id="projects"
     >
       <div className="flex justify-center text-3xl sm:text-4xl mb-20">
@@ -31,6 +33,41 @@ export default function Projects() {
             </CardItem>
           </CardBody>
         </CardContainer>
+        <CardContainer>
+          <CardBody>
+            <CardItem
+              translateZ={50}
+              className="border border-[#3B9797] p-6 rounded-xl shadow-lg shadow-black/40"
+            >
+              <a href="https://e-commerce-website-chi-ebon.vercel.app/" target="_blank" rel="noreferrer">
+                <h2 className="text-white/80 text-xl font-bold mb-2">SpiceRoute</h2>
+                <p className="text-sm sm:text-base text-white/80">
+                  E-commerce spices selling website.
+                </p>
+                <br />
+                <img src={ecomm} alt="SpiceRoute" />
+              </a>
+            </CardItem>
+          </CardBody>
+        </CardContainer>
+        <CardContainer>
+          <CardBody>
+            <CardItem
+              translateZ={50}
+              className="border border-[#3B9797] p-6 rounded-xl shadow-lg shadow-black/40"
+            >
+              <a href="https://github.com/chhavirathod/job_application_tracker" target="_blank" rel="noreferrer">
+                <h2 className="text-white/80 text-xl font-bold mb-2">JobTracker</h2>
+                <p className="text-sm sm:text-base text-white/80">
+                  Job Application Tracker Extension.
+                </p>
+                <br />
+                <img src={job} alt="JobTracker" />
+              </a>
+            </CardItem>
+          </CardBody>
+        </CardContainer>
+        
 
         <CardContainer>
           <CardBody>
