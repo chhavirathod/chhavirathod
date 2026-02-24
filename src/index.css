@@ -2,6 +2,17 @@
 @import "tw-animate-css";
 @custom-variant dark (&:where(.dark, .dark *));
 
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.heading-font {
+  font-family: 'Playfair', serif;
+}
+
+.elegant-font {
+  font-family: 'Sanchez', serif;
+}
 
 @theme inline {
   --animate-first: moveVertical 30s ease infinite;
@@ -84,6 +95,11 @@
 
 :root {
   --radius: 0.625rem;
+  /* Brand color scheme */
+  --brand-pink: #FDB5CE;
+  --brand-navy: #132440;
+  --brand-mid: #16476A;
+  --brand-teal: #3B9797;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
@@ -157,5 +173,7 @@
   }
   body {
     @apply bg-background text-foreground;
+    background-color: var(--brand-navy);
+    color: var(--brand-pink);
   }
 }
