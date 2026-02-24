@@ -24,8 +24,8 @@ export default function Skills() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          <div className="flex flex-col items-center bg-[#16476A] rounded-2xl border border-[#3B9797] shadow-lg shadow-black/40">
+        <div className="text-white/80 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <div className="flex flex-col items-center rounded-2xl border border-[#3B9797] shadow-lg shadow-black/40">
             <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-4 text-center p-4 sm:p-6">
               Web Development
             </h3>
@@ -53,7 +53,7 @@ export default function Skills() {
             </div>
           </div>
 
-          <div className="flex flex-col items-center bg-[#16476A] rounded-2xl border border-[#3B9797] shadow-lg shadow-black/40">
+          <div className="flex flex-col items-center  rounded-2xl border border-[#3B9797] shadow-lg shadow-black/40">
             <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-4 text-center p-4 sm:p-6">
               Languages
             </h3>
@@ -81,7 +81,7 @@ export default function Skills() {
             </div>
           </div>
 
-          <div className="flex flex-col items-center bg-[#16476A] rounded-2xl border border-[#3B9797] shadow-lg shadow-black/40">
+          <div className="flex flex-col items-center rounded-2xl border border-[#3B9797] shadow-lg shadow-black/40">
             <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-4 text-center p-4 sm:p-6">
               Frameworks
             </h3>

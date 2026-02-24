@@ -8,7 +8,7 @@ export function AsciiArtDemo() {
       src={chhavi}
       resolution={100}
       color="var(--color-neutral-500)"
-      animationStyle="fade"
+      animationStyle="matrix"
       animationDuration={1.5}
       animateOnView={false}
       className="mx-auto aspect-square w-full max-w-lg bg-neutral-950" />

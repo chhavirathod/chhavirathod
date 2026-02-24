@@ -17,13 +17,13 @@ export default function About() {
         <div className="mt-10 flex flex-col md:flex-row md:items-center gap-8 md:gap-12">
           <div className="flex justify-center md:justify-start">
             <img
-              className="w-32 h-32 sm:w-40 sm:h-40 md:w-64 md:h-64 rounded-2xl object-cover border-2 border-[#3B9797] hover:border-[#FDB5CE] transition-colors"
+              className="w-82 h-42 sm:w-60 sm:h-50 md:w-120 md:h-64 rounded-2xl object-cover border-2 border-[#3B9797] hover:border-[#FDB5CE] transition-colors"
               src={chhavipic}
               alt="Chhavi"
             />
           </div>
 
-          <div className="text-base sm:text-lg md:text-xl leading-relaxed space-y-4">
+          <div className="text-white sm:text-lg md:text-xl leading-relaxed space-y-4">
             <p>
               I’m a Computer Science undergraduate from Mumbai, who loves to
               develop and create websites that make an impact through

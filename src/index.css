@@ -177,3 +177,13 @@ body {
     color: var(--brand-pink);
   }
 }
+
+/* Smooth scrolling for in-page anchors */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Offset panels for sticky header so anchors are not hidden */
+.panel {
+  scroll-margin-top: 4.5rem; /* adjust if your header height changes */
+}

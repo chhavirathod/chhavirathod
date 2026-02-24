@@ -1,15 +1,15 @@
 import React from "react";
-import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaInstagram, FaPhone } from "react-icons/fa";
 
 export default function Contact() {
   return (
     <section
-      className="pt-16 pb-10 px-4 sm:px-6 lg:px-8 bg-[#132440] text-[#FDB5CE]"
+      className="pt-16 pb-10 px-4 sm:px-6 lg:px-8 bg-[#132440] text-white/80"
       id="contact"
     >
       <div className="max-w-3xl mx-auto">
         <div className="flex justify-center">
-          <b className="text-3xl sm:text-4xl mb-6">Get in touch</b>
+          <b className="text-3xl sm:text-4xl mb-6 text-[#FDB5CE]">Get in touch</b>
         </div>
 
         <p className="text-center text-lg sm:text-2xl mb-4">
@@ -61,10 +61,18 @@ export default function Contact() {
           >
             <FaInstagram />
           </a>
+          <a
+            href="tel:+917738382226"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-[#FDB5CE] transition-all"
+          >
+            <FaPhone />
+          </a>
         </div>
       </div>
 
-      <footer className="mt-6 bg-[#16476A] border-t border-[#3B9797] px-4 py-4">
+      <footer className="mt-6  border-t border-[#3B9797] px-4 py-4">
         <div className="text-center text-sm sm:text-base">
           All rights reserved © 2025
         </div>

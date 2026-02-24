@@ -84,10 +84,6 @@ type AsciiArtProps = {
   animationStyle?: "fade" | "typewriter" | "matrix" | "none";
   /** Duration for fade animation in seconds */
   animationDuration?: number;
-  /** Time in ms between revealing each character for decrypted animation */
-  revealDelayMs?: number;
-  /** Time in ms between flips of unrevealed characters for decrypted animation */
-  flipDelayMs?: number;
   /** Font family for ASCII characters */
   fontFamily?: string;
   /** Container className - use this to control size (e.g., w-full, h-64) */
@@ -117,8 +113,6 @@ export const AsciiArt: React.FC<AsciiArtProps> = ({
   animated = true,
   animationStyle = "fade",
   animationDuration = 1,
-  revealDelayMs = 50,
-  flipDelayMs = 50,
   fontFamily = "monospace",
   className,
   animateOnView = true,
@@ -132,10 +126,6 @@ export const AsciiArt: React.FC<AsciiArtProps> = ({
   const containerRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animationRef = useRef<number | null>(null);
-  const startTimeRef = useRef<number>(0);
-  const lastFlipTimeRef = useRef<number>(0);
-  const [revealCount, setRevealCount] = useState<number>(0);
-  const scrambleCharsRef = useRef<string[]>([]);
   const isInView = useInView(containerRef, { once: true, amount: 0.1 });
 
   const shouldStartAnimation = animated && animateOnView ? isInView : animated;
@@ -263,7 +253,7 @@ export const AsciiArt: React.FC<AsciiArtProps> = ({
   }, [src, resolution, effectiveCharset, objectFit]);
 
   const drawCanvas = useCallback(
-    (progress: number = 1, matrixProgress?: number, decryptedRevealCount?: number) => {
+    (progress: number = 1, matrixProgress?: number) => {
       const canvas = canvasRef.current;
       const container = containerRef.current;
       if (!canvas || !container || asciiData.length === 0) return;
@@ -306,7 +296,7 @@ export const AsciiArt: React.FC<AsciiArtProps> = ({
       ctx.textAlign = "center";
 
       const totalChars = rows * cols;
-      const revealedChars = typeof decryptedRevealCount === "number" ? decryptedRevealCount : Math.floor(progress * totalChars);
+      const revealedChars = Math.floor(progress * totalChars);
 
       let charIndex = 0;
       for (let y = 0; y < rows; y++) {
@@ -316,16 +306,6 @@ export const AsciiArt: React.FC<AsciiArtProps> = ({
           const cy = y * charHeight;
 
           if (animationStyle === "typewriter" && charIndex >= revealedChars) {
-            charIndex++;
-            continue;
-          }
-
-          if (animationStyle === "decrypted" && charIndex >= revealedChars) {
-            // show scrambled char for unrevealed
-            const scrambled = scrambleCharsRef.current[charIndex] ?? " ";
-            ctx.fillStyle = colored ? `rgb(${pixel.r}, ${pixel.g}, ${pixel.b})` : resolvedTextColor;
-            ctx.globalAlpha = 1;
-            ctx.fillText(scrambled, cx, cy);
             charIndex++;
             continue;
           }
@@ -376,115 +356,57 @@ export const AsciiArt: React.FC<AsciiArtProps> = ({
 
   useEffect(() => {
     if (!isLoaded || asciiData.length === 0) return;
-    if (animationStyle !== "decrypted") {
-      const draw = () => {
-        const canvas = canvasRef.current;
-        const container = containerRef.current;
-        if (!canvas || !container) {
-          requestAnimationFrame(draw);
-          return;
+
+    const draw = () => {
+      const canvas = canvasRef.current;
+      const container = containerRef.current;
+      if (!canvas || !container) {
+        requestAnimationFrame(draw);
+        return;
+      }
+
+      if (shouldShowStatic || hasAnimated || !shouldStartAnimation) {
+        drawCanvas(1);
+        return;
+      }
+
+      const startTime = performance.now();
+      const duration =
+        animationStyle === "fade"
+          ? animationDuration * 1000
+          : animationStyle === "typewriter"
+            ? asciiData.length * asciiData[0]?.length * 2
+            : animationStyle === "matrix"
+              ? 3000
+              : 1000;
+
+      const animate = (currentTime: number) => {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+
+        if (animationStyle === "matrix") {
+          drawCanvas(1, progress);
+        } else {
+          drawCanvas(progress);
         }
 
-        if (shouldShowStatic || hasAnimated || !shouldStartAnimation) {
-          drawCanvas(1);
-          return;
+        if (progress < 1) {
+          animationRef.current = requestAnimationFrame(animate);
+        } else {
+          setHasAnimated(true);
         }
-
-        const startTime = performance.now();
-        const duration =
-          animationStyle === "fade"
-            ? animationDuration * 1000
-            : animationStyle === "typewriter"
-              ? asciiData.length * asciiData[0]?.length * 2
-              : animationStyle === "matrix"
-                ? 3000
-                : 1000;
-
-        const animate = (currentTime: number) => {
-          const elapsed = currentTime - startTime;
-          const progress = Math.min(elapsed / duration, 1);
-
-          if (animationStyle === "matrix") {
-            drawCanvas(1, progress);
-          } else {
-            drawCanvas(progress);
-          }
-
-          if (progress < 1) {
-            animationRef.current = requestAnimationFrame(animate);
-          } else {
-            setHasAnimated(true);
-          }
-        };
-
-        animationRef.current = requestAnimationFrame(animate);
       };
 
-      const frameId = requestAnimationFrame(draw);
-
-      return () => {
-        cancelAnimationFrame(frameId);
-        if (animationRef.current) {
-          cancelAnimationFrame(animationRef.current);
-        }
-      };
-    }
-
-    // decrypted animation
-    const totalChars = asciiData.length * (asciiData[0]?.length || 0);
-    scrambleCharsRef.current = [];
-    for (let y = 0; y < asciiData.length; y++) {
-      for (let x = 0; x < (asciiData[0]?.length || 0); x++) {
-        scrambleCharsRef.current.push(
-          asciiData[y][x]?.char === " " ? " " :
-            effectiveCharset[Math.floor(Math.random() * effectiveCharset.length)]
-        );
-      }
-    }
-
-    startTimeRef.current = performance.now();
-    lastFlipTimeRef.current = startTimeRef.current;
-    setRevealCount(0);
-
-    let isCancelled = false;
-
-    const updateDecrypted = (now: number) => {
-      if (isCancelled) return;
-
-      const elapsedMs = now - startTimeRef.current;
-      const currentRevealCount = Math.min(
-        totalChars,
-        Math.floor(elapsedMs / Math.max(1, revealDelayMs))
-      );
-
-      setRevealCount(currentRevealCount);
-
-      const timeSinceLastFlip = now - lastFlipTimeRef.current;
-      if (timeSinceLastFlip >= Math.max(0, flipDelayMs)) {
-        for (let idx = 0; idx < totalChars; idx++) {
-          if (idx >= currentRevealCount) {
-            scrambleCharsRef.current[idx] =
-              effectiveCharset[Math.floor(Math.random() * effectiveCharset.length)];
-          }
-        }
-        lastFlipTimeRef.current = now;
-      }
-
-      // draw current state
-      drawCanvas(1, undefined, currentRevealCount);
-
-      if (currentRevealCount < totalChars) {
-        animationRef.current = requestAnimationFrame(updateDecrypted);
-      } else {
-        setHasAnimated(true);
-      }
+      animationRef.current = requestAnimationFrame(animate);
     };
 
-    animationRef.current = requestAnimationFrame(updateDecrypted);
+    const frameId = requestAnimationFrame(draw);
 
     return () => {
-      isCancelled = true;
-      if (animationRef.current) cancelAnimationFrame(animationRef.current);
+      cancelAnimationFrame(frameId);
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
     };
   }, [
     isLoaded,
