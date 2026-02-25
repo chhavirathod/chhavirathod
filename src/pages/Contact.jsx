@@ -74,7 +74,7 @@ export default function Contact() {
 
       <footer className="mt-6  border-t border-[#3B9797] px-4 py-4">
         <div className="text-center text-sm sm:text-base">
-          All rights reserved © 2025
+          All rights reserved © 2026
         </div>
         <div className="text-center text-sm sm:text-base">
           Hope you have a good day!❤️

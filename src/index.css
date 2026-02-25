@@ -200,3 +200,22 @@ html {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Floating badge animation used on Home badges (desktop & mobile) */
+@keyframes floatY {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+.float-bob {
+  animation: floatY 4s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* add subtle phase offsets for left/right badges */
+.float-bob.left { animation-delay: 0s; }
+.float-bob.right { animation-delay: 1.2s; }
+
+/* mobile badges: smaller and faster bob */
+.float-bob-mobile { animation: floatY 3s ease-in-out infinite; }

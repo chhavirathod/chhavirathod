@@ -42,13 +42,15 @@ export default function Home() {
           className="hidden md:flex absolute -left-28 top-1/2 transform -translate-y-1/2"
           aria-hidden
         >
-          <div
-            className="flex flex-col items-center gap-1 bg-[#132440]/70 border border-[#3B9797]/30 text-[#FDB5CE] px-3 py-2 rounded-lg backdrop-blur-sm"
-            style={{ fontFamily: "Sanchez, serif" }}
-          >
-            <FaMapMarkerAlt className="text-xl" />
-            <span className="text-xs uppercase tracking-wider">Based in</span>
-            <span className="text-sm font-semibold">MUMBAI</span>
+          <div className="float-bob left">
+            <div
+              className="flex flex-col items-center gap-1 bg-[#132440]/70 border border-[#3B9797]/30 text-[#FDB5CE] px-3 py-2 rounded-lg backdrop-blur-sm"
+              style={{ fontFamily: "Sanchez, serif" }}
+            >
+              <FaMapMarkerAlt className="text-xl" />
+              <span className="text-xs uppercase tracking-wider">Based in</span>
+              <span className="text-sm font-semibold">MUMBAI</span>
+            </div>
           </div>
         </div>
 
@@ -56,29 +58,35 @@ export default function Home() {
           className="hidden md:flex absolute -right-28 top-1/2 transform -translate-y-1/2"
           aria-hidden
         >
-          <div
-            className="flex flex-col items-center gap-1 bg-[#132440]/70 border border-[#3B9797]/30 text-[#FDB5CE] px-3 py-2 rounded-lg backdrop-blur-sm"
-            style={{ fontFamily: "Sanchez, serif" }}
-          >
-            <FaCode className="text-xl" />
-            <span className="text-xs uppercase tracking-wider">Role</span>
-            <span className="text-sm font-semibold">Full-Stack Dev</span>
+          <div className="float-bob right">
+            <div
+              className="flex flex-col items-center gap-1 bg-[#132440]/70 border border-[#3B9797]/30 text-[#FDB5CE] px-3 py-2 rounded-lg backdrop-blur-sm"
+              style={{ fontFamily: "Sanchez, serif" }}
+            >
+              <FaCode className="text-xl" />
+              <span className="text-xs uppercase tracking-wider">Role</span>
+              <span className="text-sm font-semibold">Full-Stack Dev</span>
+            </div>
           </div>
         </div>
 
         <div className="flex md:hidden mt-6 justify-center gap-4">
-          <div className="flex items-center gap-3 bg-[#132440]/70 border border-[#3B9797]/30 text-[#FDB5CE] px-3 py-2 rounded-lg backdrop-blur-sm" style={{ fontFamily: "Sanchez, serif" }}>
-            <FaMapMarkerAlt className="text-lg" />
-            <div className="text-left">
-              <div className="text-xs uppercase">Based in</div>
-              <div className="text-sm font-semibold">MUMBAI</div>
+          <div className="float-bob-mobile">
+            <div className="flex items-center gap-3 bg-[#132440]/70 border border-[#3B9797]/30 text-[#FDB5CE] px-3 py-2 rounded-lg backdrop-blur-sm" style={{ fontFamily: "Sanchez, serif" }}>
+              <FaMapMarkerAlt className="text-lg" />
+              <div className="text-left">
+                <div className="text-xs uppercase">Based in</div>
+                <div className="text-sm font-semibold">MUMBAI</div>
+              </div>
             </div>
           </div>
-          <div className="flex items-center gap-3 bg-[#132440]/70 border border-[#3B9797]/30 text-[#FDB5CE] px-3 py-2 rounded-lg backdrop-blur-sm" style={{ fontFamily: "Sanchez, serif" }}>
-            <FaCode className="text-lg" />
-            <div className="text-left">
-              <div className="text-xs uppercase">Role</div>
-              <div className="text-sm font-semibold">Full-Stack Dev</div>
+          <div className="float-bob-mobile">
+            <div className="flex items-center gap-3 bg-[#132440]/70 border border-[#3B9797]/30 text-[#FDB5CE] px-3 py-2 rounded-lg backdrop-blur-sm" style={{ fontFamily: "Sanchez, serif" }}>
+              <FaCode className="text-lg" />
+              <div className="text-left">
+                <div className="text-xs uppercase">Role</div>
+                <div className="text-sm font-semibold">Full-Stack Dev</div>
+              </div>
             </div>
           </div>
         </div>
