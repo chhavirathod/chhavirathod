@@ -4,6 +4,8 @@ import finfraud from "../assets/finFraud.png";
 import artifacts from "../assets/artifacts.png";
 import ecomm from "../assets/ecommProj.png";
 import job from "../assets/jobTrackerProj.png";
+import glowcare from "../assets/salonProj.png";
+import fincognia from "../assets/fincogniaProj.png";
 import { CardContainer, CardBody, CardItem } from "@/components/ui/3d-card";
 
 export default function Projects() {
@@ -63,6 +65,42 @@ export default function Projects() {
                 </p>
                 <br />
                 <img src={job} alt="JobTracker" />
+              </a>
+            </CardItem>
+          </CardBody>
+        </CardContainer>
+
+        <CardContainer>
+          <CardBody>
+            <CardItem
+              translateZ={50}
+              className=" border border-[#3B9797] p-6 rounded-xl shadow-lg shadow-black/40"
+            >
+              <a href="https://fincognia-orbit.vercel.app/" target="_blank" rel="noreferrer">
+                <h2 className="text-white/80 text-xl font-bold mb-2">FinCognia Orbit</h2>
+                <p className="text-sm sm:text-base text-white/80">
+                  Secure Online Banking platform.
+                </p>
+                <br />
+                <img src={fincognia} alt="FinCognia Orbit" />
+              </a>
+            </CardItem>
+          </CardBody>
+        </CardContainer>
+
+        <CardContainer>
+          <CardBody>
+            <CardItem
+              translateZ={50}
+              className=" border border-[#3B9797] p-6 rounded-xl shadow-lg shadow-black/40"
+            >
+              <a href="https://glowcaresalon.vercel.app/" target="_blank" rel="noreferrer">
+                <h2 className="text-white/80 text-xl font-bold mb-2">GlowCare Salon</h2>
+                <p className="text-sm sm:text-base text-white/80">
+                  Salon Booking Website.
+                </p>
+                <br />
+                <img src={glowcare} alt="GlowCare Salon" />
               </a>
             </CardItem>
           </CardBody>
