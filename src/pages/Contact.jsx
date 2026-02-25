@@ -77,7 +77,7 @@ export default function Contact() {
           All rights reserved © 2026
         </div>
         <div className="text-center text-sm sm:text-base">
-          Hope you have a good day!❤️
+          check the navbar for a cute surprise ;p
         </div>
       </footer>
     </section>

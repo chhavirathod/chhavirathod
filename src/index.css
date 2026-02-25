@@ -219,3 +219,8 @@ html {
 
 /* mobile badges: smaller and faster bob */
 .float-bob-mobile { animation: floatY 3s ease-in-out infinite; }
+
+/* Smooth transition helper for nav links */
+.nav-smooth {
+  transition: color .25s ease, transform .25s ease, letter-spacing .25s ease, font-weight .25s ease;
+}

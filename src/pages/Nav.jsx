@@ -77,7 +77,11 @@ export default function Nav() {
                 alt=""
                 className="absolute -top-6 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 w-8 h-6 transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100 pointer-events-none"
               />
-              <a href={link.href} onClick={(e) => handleNavClick(e, link.href)} className="whitespace-nowrap hover:font-semibold">
+              <a
+                href={link.href}
+                onClick={(e) => handleNavClick(e, link.href)}
+                className="whitespace-nowrap font-medium transition-all duration-300 ease-in-out tracking-normal group-hover:font-semibold group-hover:tracking-wide nav-smooth"
+              >
                 {link.label}
               </a>
               <img
@@ -130,7 +134,7 @@ function MobileMenu({ open, setOpen }) {
           <li key={link.href}>
             <a
               href={link.href}
-              className="flex items-center justify-between px-3 py-2 rounded-md text-[#FDB5CE] hover:bg-[#3B9797]/25"
+              className="flex items-center justify-between px-3 py-2 rounded-md text-[#FDB5CE] hover:bg-[#3B9797]/25 font-medium nav-smooth hover:font-semibold transition-all duration-300 ease-in-out"
               onClick={(e) => {
                 e.preventDefault();
                 const id = link.href.replace('#', '');
