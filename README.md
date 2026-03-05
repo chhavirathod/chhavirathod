@@ -46,7 +46,7 @@ React ⚛️ | Node.js 🟢 | Express 🚂 | MongoDB 🍃 | JavaScript 💛 | Py
 ## 📫 How to Reach Me
 
 - 📧 [Email](mailto:chhavirathod05@gmail.com)  
-- 🌐 [Portfolio](https://chhavirathod.vercel.app)  
+- 🌐 [Portfolio](https://chhavirathod.tech/)  
 - 💼 [LinkedIn](https://linkedin.com/in/chhavirathod) 
 
 ---
