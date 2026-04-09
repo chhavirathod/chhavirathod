@@ -35,12 +35,6 @@ React ⚛️ | Node.js 🟢 | Express 🚂 | MongoDB 🍃 | JavaScript 💛 | Py
 
 ---
 
-## 📈 GitHub Stats
-
-!(https://github-readme-stats.vercel.app/api?username=chhavirathod&show_icons=true&theme=tokyonight)
-
----
-
 ## 🎬 Fun Facts
 
 - I once wrote code that worked on the *first try*. Still recovering from the shock.
@@ -52,7 +46,7 @@ React ⚛️ | Node.js 🟢 | Express 🚂 | MongoDB 🍃 | JavaScript 💛 | Py
 ## 📫 How to Reach Me
 
 - 📧 [Email](mailto:chhavirathod05@gmail.com)  
-- 🌐 [Portfolio](https://chhavirathod.vercel.app)  
+- 🌐 [Portfolio](https://chhavirathod.tech/)  
 - 💼 [LinkedIn](https://linkedin.com/in/chhavirathod) 
 
 ---
