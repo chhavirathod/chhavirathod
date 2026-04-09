@@ -6,6 +6,7 @@ import ecomm from "../assets/ecommProj.png";
 import job from "../assets/jobTrackerProj.png";
 import glowcare from "../assets/salonProj.png";
 import fincognia from "../assets/fincogniaProj.png";
+import safeops from "../assets/safeops.png";
 import { CardContainer, CardBody, CardItem } from "@/components/ui/3d-card";
 
 export default function Projects() {
@@ -18,6 +19,23 @@ export default function Projects() {
         <b>My Projects</b>
       </div>
       <div className="flex flex-col gap-8 items-stretch md:flex-row md:flex-wrap md:justify-center">
+        <CardContainer>
+          <CardBody>
+            <CardItem
+              translateZ={50}
+              className="border border-[#3B9797] p-6 rounded-xl shadow-lg shadow-black/40"
+            >
+              <a href="https://safeops-ai.vercel.app/" target="_blank" rel="noreferrer">
+                <h2 className="text-white/80 text-xl font-bold mb-2">SafeOps AI</h2>
+                <p className="text-sm sm:text-base text-white/80">
+                  Real-time PPE detection for safety.
+                </p>
+                <br />
+                <img src={safeops} alt="SafeOps AI" />
+              </a>
+            </CardItem>
+          </CardBody>
+        </CardContainer>
         <CardContainer>
           <CardBody>
             <CardItem
